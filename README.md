@@ -65,18 +65,6 @@ This exercise demonstrates a simple, decoupled architecture using AWS services w
 
 ## Additional Resources
 
-- **AWS Step Functions Sample Project**  
-  A sample project demonstrating the transfer of data between DynamoDB and SQS using a state machine.  
-
-- **Step Functions Examples with the AWS SDK for Java 2.x**  
-  Code examples and scenarios for creating and managing state machines using Java.  
-
-- **Amazon SQS Fanout and Multiple Consumers**  
-  Patterns and best practices for decoupling services with SQS (and SNS if required).  
-
-- **AWS SDK Code Examples for Step Functions**  
-  Comprehensive examples in various languages, including Java, to help set up and run Step Functions.  
-
 - **Official Documentation**  
   - [AWS Step Functions Developer Guide](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html)
   - [AWS SDK for Java 2.x Developer Guide](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html)
