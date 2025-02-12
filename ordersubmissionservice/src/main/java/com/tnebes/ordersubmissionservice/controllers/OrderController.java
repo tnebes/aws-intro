@@ -2,6 +2,7 @@ package com.tnebes.ordersubmissionservice.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tnebes.ordersubmissionservice.config.AwsConfig;
 import com.tnebes.ordersubmissionservice.models.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +19,13 @@ import software.amazon.awssdk.services.sqs.model.SendMessageRequest;
 @RequestMapping("/orders")
 public class OrderController {
 
-    // Ideally load this from configuration
-    private static final String queueUrl = "https://sqs.<region>.amazonaws.com/<account-id>/YourQueueName";
     private final SqsClient sqsClient;
+    private final String queueUrl;
 
-    public OrderController() {
+    public OrderController(AwsConfig awsConfig) {
+        this.queueUrl = awsConfig.getQueueUrl();
         this.sqsClient = SqsClient.builder()
-                .region(Region.of("your-region"))
+                .region(Region.of(awsConfig.getRegion()))
                 .credentialsProvider(DefaultCredentialsProvider.create())
                 .build();
     }

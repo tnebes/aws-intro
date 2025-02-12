@@ -1,0 +1,4 @@
+aws:
+  region: ${AWS_REGION}
+  account-id: ${AWS_ACCOUNT_ID}
+  queue-name: ${AWS_QUEUE_NAME} 
